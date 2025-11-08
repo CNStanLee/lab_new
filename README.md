@@ -17,6 +17,17 @@ This Lab5 contains 3 parts:
 - Lab5 B (optional): Export the quantised model into a hardware design which could be excuted on our PYNQ board.
 - Lab5 C: Excute the model in the jupyter notebook to benchmark its performance.
 
+## How to run this
+### Whole flow
+- S1 Data preprocessing: run LabData.py, you will download google speech data and then use MFCC to extract the feature then split them to dataset saved to data/kws_12cls_mfcc_10x49_quant_flat.npz
+- S2 Model Training: In google colab, Lab5A will download our preprocessed dataset and then do float and qat training.
+- S3 FPGA flow: Lab5B will generate the hwh and bit file for deployment
+- S4 On board verification: put deploy/Lab5C_onboard.zip on your pynq board and then run all (auto downloaded if you run Lab5A).
+### Lab flow
+Only do:
+- S2 Model Training: In google colab, Lab5A will download our preprocessed dataset and then do float and qat training.
+- S4 On board verification: put deploy/Lab5C_onboard.zip on your pynq board and then run all (auto downloaded if you run Lab5A).
+
 ## Note
 We do encourage you to finish this lab in a FINN docker enviroment, but considering limited time, you could also try this in a normal conda/python/colab enviroment.
 
